@@ -1,6 +1,10 @@
 ---
 name: notion-cli
-description: Install and use the Notion CLI (`ntn`). Use when the agent needs to explain or run `ntn` for workers, public API requests, or file uploads.
+description: >-
+  Use the Notion CLI (`ntn`) to interact with the Notion API, manage workers,
+  and upload files. Use when the user asks to "call the Notion API", "deploy a
+  worker", "upload a file to Notion", "create a page", "query a database", or
+  any task involving the `ntn` command.
 ---
 
 # Notion CLI
