@@ -76,13 +76,3 @@ ntn workers deploy               # deploy from current directory
 ntn workers ls                   # list workers
 ntn workers exec <capability>    # execute a capability
 ```
-
-## `ntn tokens`
-
-Manage tokens used by `ntn workers`. Requires `ntn login`.
-
-```bash
-ntn tokens create
-ntn tokens ls
-ntn tokens revoke <token-id>
-```
