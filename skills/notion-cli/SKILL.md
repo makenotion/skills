@@ -29,10 +29,12 @@ npm i -g ntn@latest
 
 ## Authentication
 
-- `NOTION_API_TOKEN` — required for `ntn api` and `ntn files`. Set this env var
-  to a Notion integration token.
-- `ntn login` / `ntn logout` — session auth for `ntn workers` and `ntn tokens`.
-  This does **not** authenticate `ntn api` or `ntn files` today.
+- The CLI automatically uses `NOTION_API_TOKEN` when it is set.
+- Check `NOTION_API_TOKEN` first. If it is already set, prefer using it instead
+  of telling the user to run `ntn login`.
+- `ntn login` / `ntn logout` — log the CLI in or out (only use if not using
+  `NOTION_API_TOKEN`). `ntn login` requires the user to visit a URL in a web
+  browser.
 
 ## `ntn api`
 
@@ -77,8 +79,7 @@ ntn workers exec <capability>    # execute a capability
 
 ## `ntn tokens`
 
-Manage tokens used by `ntn workers`. Requires `ntn login`. These are separate
-from `NOTION_API_TOKEN` integration tokens.
+Manage tokens used by `ntn workers`. Requires `ntn login`.
 
 ```bash
 ntn tokens create
