@@ -24,7 +24,7 @@ syntax or relying on memorized knowledge:
 ## Install
 
 ```bash
-npm i -g ntn@latest
+curl -fsSL https://ntn.dev | bash
 ```
 
 ## Authentication
