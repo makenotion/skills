@@ -54,6 +54,8 @@ ntn api v1/pages -d '{"parent":{"page_id":"abc123"}}'
 The method is inferred (GET by default, POST when a body is present). Override
 with `-X METHOD`.
 
+When creating pages or comments, prefer using `markdown` over `rich_text` unless you specifically need advanced formatting.
+
 ## `ntn files`
 
 Convenience wrapper around the File Uploads API.
