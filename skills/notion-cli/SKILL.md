@@ -56,8 +56,7 @@ with `-X METHOD`.
 
 ### Markdown for pages and comments
 
-**Always use the `markdown` field** when creating or updating pages and comments.
-Do **not** build `rich_text` arrays by hand — use the `markdown` parameter instead.
+Prefer the `markdown` field when creating or updating pages and comments.
 
 ```bash
 # Comment with markdown
