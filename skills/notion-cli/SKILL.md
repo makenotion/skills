@@ -54,7 +54,20 @@ ntn api v1/pages -d '{"parent":{"page_id":"abc123"}}'
 The method is inferred (GET by default, POST when a body is present). Override
 with `-X METHOD`.
 
-When creating pages or comments, Markdown is available as an input method; use Markdown by default unless you need more advanced formatting.
+### Markdown for pages and comments
+
+Prefer the `markdown` field when creating or updating pages and comments.
+
+```bash
+# Comment with markdown
+ntn api v1/comments -d '{"parent":{"page_id":"abc123"},"markdown":"Here is a [link](https://example.com) and **bold text**."}'
+
+# Page with markdown body
+ntn api v1/pages -d '{"parent":{"page_id":"abc123"},"properties":{"title":[{"text":{"content":"My Page"}}]},"markdown":"## Heading\nSome *formatted* content."}'
+```
+
+The `markdown` field supports inline formatting (bold, italic, code, links, etc.).
+Only fall back to `rich_text` if you need features that Markdown cannot express (e.g. mentions, custom emoji, or colors).
 
 ## `ntn files`
 
