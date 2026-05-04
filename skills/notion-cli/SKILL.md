@@ -20,7 +20,7 @@ syntax or relying on memorized knowledge:
 - `ntn api <path> --spec` — print a reduced OpenAPI fragment (useful for
   understanding request/response schemas).
 - `ntn pages get <page-id>` — retrieve a page as Markdown. Use this to read page
-  content instead of hand-rolling `ntn api` requests.
+  content.
 - `ntn <command> --help` — help for any command or subcommand.
 
 ## Install
