@@ -66,7 +66,7 @@ the `markdown` field when creating or updating comments via `ntn api`.
 ntn api v1/comments -d '{"parent":{"page_id":"abc123"},"markdown":"Here is a [link](https://example.com) and **bold text**."}'
 
 # Page with markdown body
-ntn pages create --parent page:abc123 --content '# My Page\n\n## Heading\nSome *formatted* content.'
+ntn pages create --parent page:abc123 --content '## Heading\n\nSome *formatted* content.'
 ```
 
 The `markdown` field supports inline formatting (bold, italic, code, links, etc.).
