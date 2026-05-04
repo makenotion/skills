@@ -19,6 +19,8 @@ syntax or relying on memorized knowledge:
 - `ntn api <path> --docs` — print the full official docs for an endpoint.
 - `ntn api <path> --spec` — print a reduced OpenAPI fragment (useful for
   understanding request/response schemas).
+- `ntn pages get <page-id>` — retrieve a page as Markdown. Use this to read page
+  content.
 - `ntn <command> --help` — help for any command or subcommand.
 
 ## Install
@@ -56,14 +58,15 @@ with `-X METHOD`.
 
 ### Markdown for pages and comments
 
-Prefer the `markdown` field when creating or updating pages and comments.
+Prefer `ntn pages create` / `ntn pages update` for Markdown page content. Use
+the `markdown` field when creating or updating comments via `ntn api`.
 
 ```bash
 # Comment with markdown
 ntn api v1/comments -d '{"parent":{"page_id":"abc123"},"markdown":"Here is a [link](https://example.com) and **bold text**."}'
 
 # Page with markdown body
-ntn api v1/pages -d '{"parent":{"page_id":"abc123"},"properties":{"title":[{"text":{"content":"My Page"}}]},"markdown":"## Heading\nSome *formatted* content."}'
+ntn pages create --parent page:abc123 --content '## Heading\n\nSome *formatted* content.'
 ```
 
 The `markdown` field supports inline formatting (bold, italic, code, links, etc.).
