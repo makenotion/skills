@@ -19,6 +19,8 @@ syntax or relying on memorized knowledge:
 - `ntn api <path> --docs` — print the full official docs for an endpoint.
 - `ntn api <path> --spec` — print a reduced OpenAPI fragment (useful for
   understanding request/response schemas).
+- `ntn pages get <page-id>` — retrieve a page as Markdown. Use this to read page
+  content instead of hand-rolling `ntn api` requests.
 - `ntn <command> --help` — help for any command or subcommand.
 
 ## Install
