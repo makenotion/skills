@@ -76,12 +76,25 @@ Only fall back to `rich_text` if you need features that Markdown cannot express 
 
 Convenience wrapper around the File Uploads API.
 
+Read the canonical [file uploads
+guide](https://developers.notion.com/cli/guides/file-uploads) before performing
+an upload workflow. Keep exact request syntax in that guide rather than
+guessing it from the upload response.
+
+`ntn files create` creates a File Upload object and returns its ID, but does not
+attach the file anywhere in the workspace. After the upload reaches
+`uploaded`, attach it through `ntn api` as a `file_upload` object. Never treat a
+File Upload ID as a URL or place it in `file://` markup.
+
 ```bash
 ntn files create < image.png
 ntn files create --external-url https://example.com/photo.png
 ntn files list
 ntn files get <upload-id>
 ```
+
+After attaching the upload, retrieve the target page and confirm the expected
+file block or property is present before reporting success.
 
 ## `ntn workers`
 
