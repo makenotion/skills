@@ -76,12 +76,29 @@ Only fall back to `rich_text` if you need features that Markdown cannot express 
 
 Convenience wrapper around the File Uploads API.
 
+For a local file that must appear on a page, use the single-command
+upload-and-attach form:
+
+```bash
+ntn files create --attach-to-page <page-id> < image.png
+```
+
+The command exits successfully only after the upload has been appended to the
+page as a file block. If attachment fails after upload, the error includes the
+staged File Upload ID for recovery. Do not report success after a nonzero exit.
+
+Use the staging-only form when the upload will be attached somewhere other than
+a page file block:
+
 ```bash
 ntn files create < image.png
 ntn files create --external-url https://example.com/photo.png
 ntn files list
 ntn files get <upload-id>
 ```
+
+Never treat a File Upload ID as a URL or place it in `file://` markup. Run
+`ntn files create --help` for current options.
 
 ## `ntn workers`
 
