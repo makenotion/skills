@@ -121,3 +121,19 @@ Preserve the template's structure and examples unless the user's App requires a 
 Use the project's documented check and build commands after edits. Deploy with `ntn apps
 deploy` only when deployment is part of the user's request, and report local build
 success separately from deployment success.
+
+## Hand off a deployed App
+
+When deploying, use `ntn apps deploy --json` (plus any other required arguments) so the
+final deployment result includes `worker_url`, `setup_url`, and `is_update`. These are
+JSON-only field names. Human output shows the worker page URL without a `worker_url`
+label, and non-interactive plain output may show only the worker ID followed by a
+`Finish setup:` line. That line is the setup URL, not the worker URL.
+
+For a first deployment (`is_update` is false), show only the onboarding/setup URL from
+`setup_url` and tell the user to open it to finish setting up the App.
+
+For a redeployment (`is_update` is true), show both `worker_url` and `setup_url`, clearly
+labeled and clickable. Explain that the worker URL opens the deployed App and the setup
+URL lets them revisit onboarding. Use the URLs returned by the CLI rather than
+constructing or guessing them.
