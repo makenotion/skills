@@ -19,3 +19,4 @@ npx skills add makenotion/skills --skill notion-cli
 | Skill | Description |
 | ----- | ----------- |
 | `notion-cli` | Install and use the Notion CLI (`ntn`) for workers, public API requests, and file uploads. |
+| `notion-apps` | Scaffold and build Notion Apps, including workflows and database syncs. |
