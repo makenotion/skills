@@ -67,6 +67,13 @@ services, and every Notion resource required for the App to work. Recommend a wo
 for most automations; use a sync when the goal is to mirror an external collection into
 a Notion database. An App may contain both.
 
+Before proposing the design, read only enough to phrase each open decision as a concrete
+option: `AGENTS.md` and the top-level description of each relevant capability (workflow,
+sync, connections, notion-as-code). That is enough to know what is possible. Do not read
+generated type declarations (`*.generated.d.ts`), full provider API surfaces, or other
+implementation-level detail before the user has agreed on a direction — save that
+verification for the option actually chosen, during implementation.
+
 Present the proposed design in a concise, easy-to-scan format and get the user's
 agreement before implementing it. Include:
 
