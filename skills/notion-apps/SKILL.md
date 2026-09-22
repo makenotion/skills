@@ -110,6 +110,13 @@ agreed design, update the proposal and confirm the change before adding it.
 
 Treat the generated project and installed SDK as the source of truth for its version.
 
+Before implementing the agreed design, compare it with everything included by the
+scaffold. Remove template workflows, syncs, custom blocks, Notion resource declarations,
+sample assets, and supporting code that the App does not need. Do not leave example or
+placeholder capabilities in discovered capability directories: if they remain there,
+the build can include and deploy them. Preserve shared configuration and infrastructure
+that the selected capabilities still require.
+
 Feature-specific skills are installed at
 `./node_modules/@notionhq/apps/skills`. Inspect that directory and read every relevant
 `SKILL.md` completely before implementing a feature. At minimum, use the `workflow`
